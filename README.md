@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Portafolio - Daniel Zavala
 
-First, run the development server:
+Portafolio moderno y minimalista desarrollado con Next.js 14, TypeScript y Tailwind CSS.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tecnologías
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Framework:** Next.js 14 (App Router)
+- **Lenguaje:** TypeScript
+- **Estilos:** Tailwind CSS
+- **UI Components:** shadcn/ui
+- **Animaciones:** Framer Motion
+- **Emails:** Resend
+- **Formularios:** React Hook Form + Zod
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Instalación
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1.  Clonar el repositorio (o descargar):
+    ```bash
+    git clone <tu-repo>
+    cd my_pagweb
+    ```
 
-## Learn More
+2.  Instalar dependencias:
+    ```bash
+    npm install
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+3.  Configurar variables de entorno:
+    Renombra `.env.example` a `.env.local` (o crea uno) y añade:
+    ```env
+    RESEND_API_KEY=re_123456789
+    CONTACT_TO_EMAIL=tu@email.com
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4.  Iniciar servidor de desarrollo:
+    ```bash
+    npm run dev
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Estructura del Proyecto
 
-## Deploy on Vercel
+- `src/components/layout`: Header y Footer.
+- `src/components/sections`: Secciones de la Home (Hero, Services, etc.).
+- `src/components/ui`: Componentes base de shadcn.
+- `src/data`: Datos estáticos (proyectos).
+- `src/app/api/send`: Endpoint para envío de correos.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy en Vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1.  Sube el proyecto a GitHub.
+2.  Importa el proyecto en Vercel.
+3.  Configura las Environment Variables (`RESEND_API_KEY`, `CONTACT_TO_EMAIL`).
+4.  Deploy.
+
+## Notas
+- Los correos se envían usando la integración de Resend. Asegúrate de verificar tu dominio en Resend para producción, o usa el correo de prueba `onboarding@resend.dev` y envía solo a tu correo registrado durante desarrollo.
