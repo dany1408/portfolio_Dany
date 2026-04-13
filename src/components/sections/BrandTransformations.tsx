@@ -12,10 +12,10 @@ export function BrandTransformations() {
                 <div className="space-y-4">
                     <div className="h-[380px] rounded-lg overflow-hidden shadow-lg">
                         <BeforeAfterSlider
-                            beforeSrc="/images/projects/proyecto2_gmoli.jpg"
-                            afterSrc="/images/projects/proyecto2_gmoli.jpg"
-                            beforeLabel="Identidad anterior"
-                            afterLabel="Nueva identidad GISMOLI"
+                            beforeSrc="/images/projects/Kit-L.jpg"
+                            afterSrc="/images/projects/Kit-R.jpg"
+                            beforeLabel="Kit-L"
+                            afterLabel="Kit-R"
                         />
                     </div>
                     <p className="text-center text-sm text-muted-foreground">
