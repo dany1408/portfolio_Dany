@@ -11,6 +11,7 @@ export interface Project {
     coverImage: string;
     gallery: string[];
     link?: string;
+    beforeImage?: string;
 }
 
 export const projects: Project[] = [
@@ -27,6 +28,7 @@ export const projects: Project[] = [
             "Aplicaciones para redes sociales y piezas promocionales",
             "Guía rápida de uso (versiones, fondos y legibilidad)"],
         coverImage: "/images/projects/proyecto1_Rincon-ktracho.jpg",
+        beforeImage: "/images/projects/proyecto1_Rincon-ktracho.jpg",
         gallery: [],
     },
     {

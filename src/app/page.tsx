@@ -15,7 +15,7 @@ export default function Home() {
         <FeaturedProjects />
         <Process />
         <About />
-        {/* <Testimonials /> */}
+        <Testimonials />
         <Contact />
       </main>
     </div>

@@ -11,21 +11,25 @@ const services = [
         icon: <Palette className="h-8 w-8 mb-4" />,
         title: "Branding & Identidad",
         description: "Creación de marcas memorables con un enfoque minimalista y atemporal.",
+        price: "Desde $150 USD",
     },
     {
         icon: <Layout className="h-8 w-8 mb-4" />,
         title: "Diseño UI/UX",
         description: "Interfaces intuitivas y atractivas diseñadas pensando en el usuario final.",
+        price: "Desde $200 USD",
     },
     {
         icon: <Code className="h-8 w-8 mb-4" />,
         title: "Desarrollo Web",
         description: "Sitios web rápidos, responsivos y optimizados con Next.js y Tailwind.",
+        price: "Desde $300 USD",
     },
     {
         icon: <LineChart className="h-8 w-8 mb-4" />,
         title: "Estrategia Digital",
         description: "Soluciones para mejorar tu presencia online y automatizar procesos.",
+        price: "Desde $100 USD",
     },
 ];
 
@@ -55,6 +59,7 @@ export function Services() {
                                 <div className="text-primary">{service.icon}</div>
                                 <CardTitle>{service.title}</CardTitle>
                                 <CardDescription>{service.description}</CardDescription>
+                                <p className="text-sm font-medium text-primary/80 mt-2">{service.price}</p>
                             </CardHeader>
                             <CardFooter className="mt-auto pt-6">
                                 <Button asChild className="w-full group" variant="secondary">

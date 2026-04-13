@@ -9,6 +9,7 @@ import { ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 import {
     Dialog,
     DialogContent,
@@ -77,13 +78,22 @@ export default function ProjectsPage() {
                             </motion.div>
                         </DialogTrigger>
                         <DialogContent className="sm:max-w-[800px] w-[95vw] max-h-[90vh] overflow-y-auto p-0 gap-0">
-                            <div className="relative w-full h-[200px] sm:h-[300px] bg-muted">
-                                <Image
-                                    src={project.coverImage}
-                                    alt={project.title}
-                                    fill
-                                    className="object-cover"
-                                />
+                            <div className="relative w-full h-[200px] sm:h-[300px]">
+                                {project.beforeImage ? (
+                                    <BeforeAfterSlider
+                                        beforeSrc={project.beforeImage}
+                                        afterSrc={project.coverImage}
+                                        beforeLabel="Concepto"
+                                        afterLabel="Final"
+                                    />
+                                ) : (
+                                    <Image
+                                        src={project.coverImage}
+                                        alt={project.title}
+                                        fill
+                                        className="object-cover"
+                                    />
+                                )}
                                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent" />
                                 <div className="absolute bottom-6 left-6 right-6">
                                     <div className="flex flex-wrap gap-2 mb-3">

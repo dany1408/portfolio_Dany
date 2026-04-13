@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ui/mode-toggle";
+import { Linkedin } from "lucide-react";
 
 export function Header() {
     return (
@@ -19,6 +20,10 @@ export function Header() {
                     </nav>
                 </div>
                 <div className="flex items-center gap-4">
+                    <Link href="https://www.linkedin.com/in/danielzavala" target="_blank" className="text-muted-foreground hover:text-foreground transition-colors">
+                        <Linkedin className="h-5 w-5" />
+                        <span className="sr-only">LinkedIn</span>
+                    </Link>
                     <ModeToggle />
                     <Button variant="default" size="sm" asChild>
                         <Link href="/#contacto">Cotizar</Link>
