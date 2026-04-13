@@ -44,13 +44,13 @@ export function About() {
                 >
                     <h2 className="text-3xl font-bold tracking-tighter">Hola, soy Daniel Zavala</h2>
                     <p className="text-muted-foreground text-lg">
-                        Diseñador gráfico y desarrollador web con más de 4 años ayudando a marcas en Honduras y Latinoamérica a construir su presencia digital desde cero.
+                        Especialista en Marketing y Diseño Gráfico con más de 4 años de trayectoria ayudando a marcas e instituciones en Honduras y Latinoamérica a consolidar su identidad. Mi enfoque combina la estrategia de mercado con una ejecución visual sólida para transformar ideas en proyectos con propósito y coherencia.
                     </p>
                     <p className="text-muted-foreground">
-                        He trabajado con startups, instituciones educativas y emprendedores que necesitan pasar de una idea a una marca coherente, un sitio profesional o una estrategia digital que funcione.
+                        Me dedico a construir marcas desde su base, diseñando estrategias digitales que funcionan y sistemas de comunicación efectivos. Complemento mi perfil con el desarrollo web, lo que me permite no solo proyectar la imagen de una marca, sino construir su infraestructura digital de manera integral y eficiente.
                     </p>
                     <p className="text-muted-foreground font-medium">
-                        Mi enfoque: diseño limpio, código eficiente, y comunicación directa sin vueltas.
+                        Mi filosofía es simple: diseño con intención, marketing basado en resultados y una comunicación directa para que cada proyecto alcance su máximo potencial.
                     </p>
                     <div className="grid grid-cols-3 gap-4 pt-4">
                         {metrics.map((metric, index) => (
