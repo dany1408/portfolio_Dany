@@ -39,7 +39,7 @@ export default function ProjectsPage() {
                     className="inline-flex items-center gap-2 bg-primary/10 text-primary text-sm font-medium px-4 py-1.5 rounded-full mb-6"
                 >
                     <span>★</span>
-                    <span>{projects.length} proyectos entregados</span>
+                    <span>{projects.length} proyectos destacados entregados</span>
                 </motion.div>
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
