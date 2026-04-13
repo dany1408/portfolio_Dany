@@ -126,7 +126,7 @@ export function Contact() {
                                             <FormItem>
                                                 <FormLabel>Teléfono / WhatsApp</FormLabel>
                                                 <FormControl>
-                                                    <Input placeholder="+504 9999-9999" {...field} />
+                                                    <Input placeholder="+504 94389886" {...field} />
                                                 </FormControl>
                                                 <FormMessage />
                                             </FormItem>
