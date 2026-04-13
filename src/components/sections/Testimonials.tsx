@@ -4,24 +4,12 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Keyla Rodríguez",
-    initials: "KR",
-    company: "EduSalud FCM-UNAH",
-    role: "Coordinadora de Programa",
     text: "Daniel transformó nuestra identidad visual. El manual de marca que creó nos dio coherencia en todas nuestras comunicaciones. Profesional, puntual y con un ojo estético excepcional."
   },
   {
-    name: "Carlos Mejía",
-    initials: "CM",
-    company: "Rincón Ktracho",
-    role: "Fundador",
     text: "El logo que diseñó capturó exactamente lo que queríamos. El proceso fue ágil y las revisiones fueron rápidas. Totalmente recomendado."
   },
   {
-    name: "Andrea Molina",
-    initials: "AM",
-    company: "MoonStars Brand",
-    role: "CEO",
     text: "Desde el branding hasta el sitio web, Daniel entregó todo con calidad premium. Sabe escuchar al cliente y traduce eso en diseño real."
   }
 ];
@@ -48,16 +36,7 @@ export function Testimonials() {
                 <Star key={i} className="h-4 w-4 fill-primary text-primary" />
               ))}
             </div>
-            <p className="text-muted-foreground mb-6 leading-relaxed">"{t.text}"</p>
-            <div className="flex items-center gap-3 border-t pt-4">
-              <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-sm font-bold text-primary">
-                {t.initials}
-              </div>
-              <div>
-                <p className="font-semibold text-sm">{t.name}</p>
-                <p className="text-xs text-muted-foreground">{t.role}, {t.company}</p>
-              </div>
-            </div>
+            <p className="text-muted-foreground leading-relaxed">"{t.text}"</p>
           </motion.div>
         ))}
       </div>
