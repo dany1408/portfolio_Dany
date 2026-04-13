@@ -20,7 +20,7 @@ export function Header() {
                     </nav>
                 </div>
                 <div className="flex items-center gap-4">
-                    <Link href="https://www.linkedin.com/in/danielzavala" target="_blank" className="text-muted-foreground hover:text-foreground transition-colors">
+                    <Link href="https://www.linkedin.com/in/daniel-zavala-hernandez-498bb1232/" target="_blank" className="text-muted-foreground hover:text-foreground transition-colors">
                         <Linkedin className="h-5 w-5" />
                         <span className="sr-only">LinkedIn</span>
                     </Link>
