@@ -5,8 +5,8 @@ export function BrandTransformations() {
     return (
         <section className="container mx-auto px-4 py-24 bg-gray-50 dark:bg-gray-900/50">
             <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold tracking-tighter mb-4">Transformaciones de Marca</h2>
-                <p className="text-muted-foreground">Arrastra para ver el antes y después de cada proyecto</p>
+                <h2 className="text-3xl font-bold tracking-tighter mb-4">Rediseño</h2>
+                <p className="text-muted-foreground">Arrastra para ver el proceso de cada proyecto</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 <div className="space-y-4">
