@@ -8,9 +8,9 @@ export function BrandTransformations() {
                 <h2 className="text-3xl font-bold tracking-tighter mb-4">Rediseño</h2>
                 <p className="text-muted-foreground">Arrastra para ver el proceso de cada proyecto</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                 <div className="space-y-4">
-                    <div className="h-[380px] rounded-lg overflow-hidden shadow-lg">
+                    <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
                         <BeforeAfterSlider
                             beforeSrc="/images/projects/Kit-L.jpg"
                             afterSrc="/images/projects/Kit-R.jpg"
@@ -23,7 +23,7 @@ export function BrandTransformations() {
                     </p>
                 </div>
                 <div className="space-y-4">
-                    <div className="h-[380px] rounded-lg overflow-hidden shadow-lg">
+                    <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
                         <BeforeAfterSlider
                             beforeSrc="/images/projects/proyecto1_Rincon-ktracho.jpg"
                             afterSrc="/images/projects/proyecto1_Rincon-ktracho.jpg"
