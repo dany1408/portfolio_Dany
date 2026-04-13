@@ -14,8 +14,8 @@ export function BrandTransformations() {
                         <BeforeAfterSlider
                             beforeSrc="/images/projects/Kit-L.jpg"
                             afterSrc="/images/projects/Kit-R.jpg"
-                            beforeLabel="Kit-L"
-                            afterLabel="Kit-R"
+                            beforeLabel="Antes"
+                            afterLabel="Después"
                         />
                     </div>
                     <p className="text-center text-sm text-muted-foreground">
