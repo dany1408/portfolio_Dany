@@ -122,7 +122,7 @@ export function Hero() {
           <div className="relative rounded-2xl overflow-hidden 
             aspect-[4/3] w-full shadow-2xl">
             <Image
-              src="/images/hero-workspace.jpg"
+              src="/images/projects/head foto.jpg"
               alt="Daniel Zavala — espacio de trabajo creativo"
               fill
               className="object-cover"
