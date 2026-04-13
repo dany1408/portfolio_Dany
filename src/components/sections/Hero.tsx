@@ -155,18 +155,6 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Card flotante — proyectos */}
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.4 }}
-            className="absolute -top-4 -right-4 bg-background 
-              border border-border/60 rounded-xl px-4 py-3 
-              shadow-lg backdrop-blur"
-          >
-            <p className="text-xs text-muted-foreground">Proyectos entregados</p>
-            <p className="text-2xl font-bold text-primary">15+</p>
-          </motion.div>
         </motion.div>
 
       </div>
