@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export function WhatsAppFloat() {
     const [isVisible, setIsVisible] = useState(false);
-    const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "50412345678";
+    const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "50494389886";
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hola%20Daniel%2C%20me%20interesa%20cotizar%20un%20proyecto`;
 
     useEffect(() => {
