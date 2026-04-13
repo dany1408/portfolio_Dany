@@ -44,7 +44,7 @@ export function Hero() {
         className="text-xl md:text-2xl text-muted-foreground 
           mb-4 max-w-[600px] mx-auto leading-relaxed"
       >
-        Diseño Gráfico & Desarrollo Web.
+        Diseño Gráfico, Marketing Digital y Desarrollo Web.
         <br />
         <span className="text-foreground font-medium">
           Marcas que generan confianza. Sitios que convierten.
