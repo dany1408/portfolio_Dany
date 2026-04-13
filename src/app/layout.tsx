@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Daniel Zavala | Freelancer",
-  description: "Portafolio profesional de Daniel Zavala - Diseño Gráfico & Desarrollo Web",
+  title: "Daniel Zavala | Diseño Gráfico, Marketing & Desarrollo Web",
+  description: "Marcas que generan confianza. Sitios que convierten.",
 };
 
 export default function RootLayout({
