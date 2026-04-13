@@ -25,14 +25,14 @@ export function BrandTransformations() {
                 <div className="space-y-4">
                     <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
                         <BeforeAfterSlider
-                            beforeSrc="/images/projects/proyecto1_Rincon-ktracho.jpg"
-                            afterSrc="/images/projects/proyecto1_Rincon-ktracho.jpg"
-                            beforeLabel="Sin marca"
-                            afterLabel="Rincón Ktracho"
+                            beforeSrc="/images/projects/RinconK-L.jpg"
+                            afterSrc="/images/projects/RinconK-R.jpg"
+                            beforeLabel="Antes"
+                            afterLabel="Después"
                         />
                     </div>
                     <p className="text-center text-sm text-muted-foreground">
-                        Creación de logotipo desde cero — 2025
+                        Rediseño identidad visual — 2025
                     </p>
                 </div>
             </div>
