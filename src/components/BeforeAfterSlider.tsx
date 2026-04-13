@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useRef, useCallback, useEffect } from "react";
+import { useRef, useCallback, useEffect } from "react";
 import Image from "next/image";
 
 interface Props {
@@ -12,48 +12,65 @@ interface Props {
 }
 
 export function BeforeAfterSlider({ beforeSrc, afterSrc, beforeLabel = "Antes", afterLabel = "Después" }: Props) {
-    const [position, setPosition] = useState(50);
-    const [isDragging, setIsDragging] = useState(false);
-    const containerRef = useRef<HTMLDivElement>(null);
+    const wrapRef = useRef<HTMLDivElement>(null);
+    const afterRef = useRef<HTMLDivElement>(null);
+    const dividerRef = useRef<HTMLDivElement>(null);
+    const isDraggingRef = useRef(false);
 
-    const handleMove = useCallback((clientX: number) => {
-        if (!containerRef.current) return;
-        const rect = containerRef.current.getBoundingClientRect();
-        const x = clientX - rect.left;
-        const newPosition = Math.min(Math.max((x / rect.width) * 100, 0), 100);
-        setPosition(newPosition);
+    const setPos = useCallback((x: number) => {
+        if (!wrapRef.current || !afterRef.current || !dividerRef.current) return;
+        const rect = wrapRef.current.getBoundingClientRect();
+        const pct = (x - rect.left) / rect.width;
+        const clamped = Math.max(0.02, Math.min(0.98, pct));
+        afterRef.current.style.clipPath = `inset(0 ${(1 - clamped) * 100}% 0 0)`;
+        dividerRef.current.style.left = `${clamped * 100}%`;
     }, []);
 
-    const handleMouseDown = () => setIsDragging(true);
-    const handleMouseUp = () => setIsDragging(false);
+    const handleMouseDown = useCallback(() => {
+        isDraggingRef.current = true;
+    }, []);
 
-    const handleMouseMove = (e: React.MouseEvent) => {
-        if (isDragging) handleMove(e.clientX);
-    };
+    const handleMouseMove = useCallback((e: MouseEvent) => {
+        if (isDraggingRef.current) {
+            setPos(e.clientX);
+        }
+    }, [setPos]);
 
-    const handleTouchMove = (e: React.TouchEvent) => {
-        if (e.touches.length === 1) handleMove(e.touches[0].clientX);
-    };
+    const handleMouseUp = useCallback(() => {
+        isDraggingRef.current = false;
+    }, []);
+
+    const handleTouchStart = useCallback(() => {
+        isDraggingRef.current = true;
+    }, []);
+
+    const handleTouchMove = useCallback((e: React.TouchEvent) => {
+        if (isDraggingRef.current && e.touches.length === 1) {
+            setPos(e.touches[0].clientX);
+        }
+    }, [setPos]);
+
+    const handleTouchEnd = useCallback(() => {
+        isDraggingRef.current = false;
+    }, []);
 
     useEffect(() => {
-        const handleGlobalMouseUp = () => setIsDragging(false);
-        const handleGlobalMouseMove = (e: MouseEvent) => {
-            if (isDragging) handleMove(e.clientX);
-        };
-        window.addEventListener("mouseup", handleGlobalMouseUp);
-        window.addEventListener("mousemove", handleGlobalMouseMove);
+        window.addEventListener("mousemove", handleMouseMove);
+        window.addEventListener("mouseup", handleMouseUp);
         return () => {
-            window.removeEventListener("mouseup", handleGlobalMouseUp);
-            window.removeEventListener("mousemove", handleGlobalMouseMove);
+            window.removeEventListener("mousemove", handleMouseMove);
+            window.removeEventListener("mouseup", handleMouseUp);
         };
-    }, [isDragging, handleMove]);
+    }, [handleMouseMove, handleMouseUp]);
 
     return (
         <div
-            ref={containerRef}
-            className="relative w-full aspect-video overflow-hidden rounded-lg select-none cursor-ew-resize"
-            onMouseMove={handleMouseMove}
+            ref={wrapRef}
+            className="relative w-full h-full overflow-hidden rounded-lg select-none cursor-ew-resize"
+            onMouseDown={handleMouseDown}
+            onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
         >
             <div className="absolute inset-0">
                 <Image
@@ -64,10 +81,11 @@ export function BeforeAfterSlider({ beforeSrc, afterSrc, beforeLabel = "Antes", 
                     draggable={false}
                 />
             </div>
-            
+
             <div
+                ref={afterRef}
                 className="absolute inset-0 overflow-hidden"
-                style={{ width: `${position}%` }}
+                style={{ clipPath: "inset(0 50% 0 0)" }}
             >
                 <Image
                     src={beforeSrc}
@@ -79,18 +97,12 @@ export function BeforeAfterSlider({ beforeSrc, afterSrc, beforeLabel = "Antes", 
             </div>
 
             <div
-                className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize shadow-[0_0_10px_rgba(0,0,0,0.5)]"
-                style={{ left: `${position}%`, transform: "translateX(-50%)" }}
+                ref={dividerRef}
+                className="absolute top-0 bottom-0 w-1 bg-white shadow-[0_0_10px_rgba(0,0,0,0.5)]"
+                style={{ left: "50%" }}
             >
-                <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center cursor-ew-resize"
-                    onMouseDown={handleMouseDown}
-                    onTouchStart={handleMouseDown}
-                >
-                    <div className="flex gap-1">
-                        <span className="w-0.5 h-3 bg-gray-400 rounded-full" />
-                        <span className="w-0.5 h-3 bg-gray-400 rounded-full" />
-                    </div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center cursor-ew-resize">
+                    <span className="text-gray-500 text-lg font-bold">↔</span>
                 </div>
             </div>
 
